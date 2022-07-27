@@ -1,0 +1,5 @@
+.barra_de_busqueda {
+    display: flex;
+    flex-direction: row;
+    padding-top: 0.3rem;
+}

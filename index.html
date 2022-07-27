@@ -4,10 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/styles.css">
+    <link rel="stylesheet" href="./CSS/reset.css">
+    <link rel="stylesheet" href="./CSS/barra_de_busqueda/barra_de_busqueda.css">
+    <link rel="stylesheet" href="./CSS/barra_de_busqueda/barra_de_busqueda__logo.css">
+    <link rel="stylesheet" href="./CSS/barra_de_busqueda/barra_de_busqueda__ingresar_solicitud.css">
+    <link rel="stylesheet" href="./CSS/barra_de_busqueda/barra_de_busqueda__boton_login.css">
+    <link rel="stylesheet" href="./CSS/barra_de_busqueda/barra_de_busqueda__contenedor_boton_login.css">
+    <link rel="stylesheet" href="./CSS/banner/banner.css">
+    <link rel="stylesheet" href="./CSS/banner/banner_imagen.css">
+    <link rel="stylesheet" href="./CSS/banner/banner__contenedor_texto.css">
     <title>Tienda Geek</title>
 </head>
 <body>
-    <h1>Tienda Geek</h1>
+    <section class="barra_de_busqueda">
+        <img class="barra_de_busqueda__logo" src="./imagenes/Logo.png">
+        <input class="barra_de_busqueda__ingresar_solicitud" placeholder="¿Que deseas buscar?">
+        <div class="barra_de_busqueda__contenedor_boton_login">
+            <button class="barra_de_busqueda__boton_login">Login</button>
+        </div>
+    </section>
+    <section class="banner">
+        <img class="banner__imagen" src="./imagenes/imagen_banner.jpg">
+        <div class="banner__contenedor_texto">
+            <h1 class="banner__contenedor_texto--titulo">Diciembre Promocional</h1>
+            <p class="banner__contenedor_texto--descripcion">Productos seleccionados con 33% de descuento</p>
+            <button class="banner__contenedor_texto--boton">Ver Consolas</button>
+        </div>
+    </section>
 </body>
 </html>

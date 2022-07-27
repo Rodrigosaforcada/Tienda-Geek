@@ -1,0 +1,9 @@
+.barra_de_busqueda__boton_login {
+    background-color: white;
+    color: lightseagreen;
+    border: 1px solid lightseagreen;
+    height: 40px;
+    border-radius: 5px;
+    padding: 0 5rem;
+    margin-right: 2rem;
+}
