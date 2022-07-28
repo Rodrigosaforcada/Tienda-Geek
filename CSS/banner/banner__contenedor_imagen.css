@@ -1,0 +1,18 @@
+.banner__contenedor_imagen {
+    display: flex;
+    flex-direction: row;
+}
+
+.banner__contenedor_imagen--imagen {
+    width: 100vw;
+    height: 50vh;
+}
+
+.banner__contenedor_imagen--pantalla_oscurecedora {
+    display: block;
+    position: relative;
+    right: 100vw;
+    background: rgba(0, 0, 0, 0.2);
+    padding-right: 100vw;
+    color: rgba(0, 0, 0, 0.2);
+}

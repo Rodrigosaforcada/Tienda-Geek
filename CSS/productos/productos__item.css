@@ -1,7 +1,17 @@
 .productos__item {
-    width: 250px;
+    margin-right: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .productos__item--imagen {
     width: 200px;
+}
+
+.productos__item--titulo_producto {
+    font-size: 110%;
+}
+
+.productos__item--vinculo {
+    text-decoration: none;
+    color: rgb(50, 176, 255);
 }
