@@ -1,0 +1,8 @@
+.rodapie__contenido {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100vw;
+    margin: 2rem 0;
+    padding: 2rem 0;
+}

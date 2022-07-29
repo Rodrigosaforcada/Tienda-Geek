@@ -1,0 +1,12 @@
+.rodapie__contacto {
+    color: black;
+}
+
+.rodapie__contacto--lista {
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.rodapie__contacto--lista_item {
+    margin-bottom: 0.5rem;
+}
