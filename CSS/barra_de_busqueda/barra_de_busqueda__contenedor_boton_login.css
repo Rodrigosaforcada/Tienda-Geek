@@ -5,3 +5,9 @@
     width: 100%;
     height: 51px;
 }
+
+@media screen and (max-width: 360px) {
+    .barra_de_busqueda__contenedor_boton_login {
+        width: 50%;
+    }
+}

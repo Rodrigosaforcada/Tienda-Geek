@@ -2,8 +2,30 @@
     margin: 3rem 0 3rem 3rem;
 }
 
+.porductos__seccion--contenedor_titulo {
+    display: flex;
+    justify-content: space-between;
+}
+
 .porductos__seccion--titulo {
     font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
+    display: inline;
     margin-bottom: 1rem;
+    font-size: 200%;
+}
+
+.porductos__seccion--ver_todo {
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline;
+    text-decoration: none;
+    color: rgb(42, 173, 255);
+    margin-right: 2rem;
+    font-size: 120%;
+    margin-top: 0.8rem;
+}
+
+@media screen and (max-width: 768px) {
+    .porductos__seccion {
+        margin: 3rem 0 3rem 2rem;
+    }
 }

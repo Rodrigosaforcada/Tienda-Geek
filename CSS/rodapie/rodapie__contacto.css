@@ -10,3 +10,24 @@
 .rodapie__contacto--lista_item {
     margin-bottom: 0.5rem;
 }
+
+@media screen and (max-width: 768px) {
+    .rodapie__contacto {
+        grid-area: vinculos;
+        margin-top: 30%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+
+    .rodapie__contacto {
+        display: flex;
+        justify-content: center;
+        margin-top: 5%;
+        margin-left: -10%;
+    }
+
+    .rodapie__contacto--lista_item {
+        text-align: center;
+    }
+}

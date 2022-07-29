@@ -1,3 +1,10 @@
 .barra_de_busqueda__logo {
     margin-left: 3rem;
 }
+
+@media screen and (max-width: 360px) {
+    .barra_de_busqueda__logo {
+        width: 176px;
+        margin-left: 0.5rem;
+    }
+}

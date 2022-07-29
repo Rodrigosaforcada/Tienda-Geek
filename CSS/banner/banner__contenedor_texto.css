@@ -2,7 +2,7 @@
     font-family: Helvetica, sans-serif;
     display: block;
     position: absolute;
-    bottom: calc(100vw * 0.1);
+    bottom: calc(100vw * 0.05);
     padding-left: 100px;
     color: white;
 }
@@ -24,4 +24,23 @@
     border: none;
     font-size: 130%;
     border-radius: 5px;
+}
+
+@media screen and (max-width: 360px) {
+    .banner__contenedor_texto {
+        font-size: 50%;
+        padding-left: 50px;
+    }
+
+    .banner__contenedor_texto--titulo {
+        margin-bottom: 0.1rem;
+    }
+
+    .banner__contenedor_texto--descripcion {
+        margin-bottom: 0.2rem;
+    }
+
+    .banner__contenedor_texto--boton {
+        font-size: 160%;
+    }
 }

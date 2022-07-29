@@ -26,3 +26,34 @@
     border: none;
     border-radius: 5px;
 }
+
+@media screen and (max-width: 768px) {
+
+    .rodapie__inputs {
+        margin-top: auto;
+    }
+
+    .rodapie__inputs--item {
+        width: 50vw;
+    }
+}
+
+@media screen and (max-width: 360px) {
+
+    .rodapie__inputs {
+        margin-top: 1rem;
+        padding-left: 1.5rem;
+    }
+
+    .rodapie__inputs--invitacion {
+        width: 150px;
+    }
+
+    .rodapie__inputs--item {
+        width: 80vw;
+    }
+
+    .rodapie__inputs--boton_enviar {
+        width: 150px;
+    }
+}

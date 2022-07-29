@@ -6,3 +6,19 @@
     margin: 2rem 0;
     padding: 2rem 0;
 }
+
+@media screen and (max-width: 768px) {
+    .rodapie__contenido {
+        display: grid;
+        grid-template-areas: 
+        "vinculos" "contacto";
+        grid-template-columns: 30% 60%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .rodapie__contenido {
+        display: flex;
+        flex-direction: column;
+    }
+}
