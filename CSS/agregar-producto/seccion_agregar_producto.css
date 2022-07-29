@@ -1,0 +1,37 @@
+.seccion_agregar_producto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 0 100px 30vw;
+}
+
+.seccion_agregar_producto--solicitud {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 1rem;
+}
+
+.seccion_agregar_producto--label {
+    color: rgb(163, 163, 163);
+    padding: 2px 0 0 2px;
+    font-size: 80%;
+    display: block;
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.seccion_agregar_producto--input {
+    height: 50px;
+    width: 35vw;
+    margin-bottom: 1rem;
+}
+
+.seccion_agregar_producto--boton_agregar {
+    width: 35.3vw;
+    background-color: rgb(59, 180, 255);
+    color: white;
+    padding: 5px;
+    border: none;
+    font-size: 130%;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,30 @@
+.seccion_login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 0 100px 38vw;
+}
+
+.seccion_login--solicitud {
+    font-size: 120%;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 1rem;
+    padding-left: 6vw;
+}
+
+.seccion_login--input {
+    height: 30px;
+    width: 20vw;
+    margin-bottom: 1rem;
+}
+
+.seccion_login--boton_enviar {
+    width: 20.4vw;
+    background-color: rgb(59, 180, 255);
+    color: white;
+    padding: 5px;
+    border: none;
+    font-size: 130%;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
