@@ -12,7 +12,7 @@
 
 .seccion_agregar_producto--label {
     color: rgb(163, 163, 163);
-    padding: 2px 0 0 2px;
+    padding: 2px 0 0 10px;
     font-size: 80%;
     display: block;
     position: absolute;
@@ -34,4 +34,19 @@
     font-size: 130%;
     border-radius: 5px;
     margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .seccion_agregar_producto {
+        padding: 100px 0 100px 10vw;
+    }
+
+    .seccion_agregar_producto--input {
+        width: 80vw;
+    }
+
+    .seccion_agregar_producto--boton_agregar {
+        width: 80vw;
+        margin-left: 6px;
+    }
 }
