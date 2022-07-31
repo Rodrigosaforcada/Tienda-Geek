@@ -2,15 +2,15 @@
     background-color: white;
     color: lightseagreen;
     border: 1px solid lightseagreen;
-    height: 40px;
     border-radius: 5px;
-    padding: 0 5rem;
+    padding: 0.6rem 5rem;
     margin-right: 2rem;
 }
 
 .barra_de_busqueda__boton_login--vinculo {
     color: lightseagreen;
     text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 @media screen and (max-width: 360px) {

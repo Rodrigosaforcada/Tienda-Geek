@@ -19,6 +19,7 @@
 
 .banner__contenedor_texto--boton {
     background-color: rgb(59, 180, 255);
+    text-decoration: none;
     color: white;
     padding: 5px;
     border: none;

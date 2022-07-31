@@ -29,7 +29,7 @@
         <img class="barra_de_busqueda__logo" src="./imagenes/Logo.png">
         <input class="barra_de_busqueda__ingresar_solicitud" placeholder="¿Que deseas buscar?">
         <div class="barra_de_busqueda__contenedor_boton_login">
-            <button class="barra_de_busqueda__boton_login"><a class="barra_de_busqueda__boton_login--vinculo" href="./login.html">Login</a></button>
+            <a class="barra_de_busqueda__boton_login barra_de_busqueda__boton_login--vinculo" href="./login.html">Login</a>
         </div>
     </section>
     <section class="banner">
@@ -40,7 +40,7 @@
         <div class="banner__contenedor_texto">
             <h1 class="banner__contenedor_texto--titulo">Diciembre Promocional</h1>
             <p class="banner__contenedor_texto--descripcion">Productos seleccionados con 33% de descuento</p>
-            <button class="banner__contenedor_texto--boton">Ver Consolas</button>
+            <a href="#consolas" class="banner__contenedor_texto--boton" id="boton_ver_consolas">Ver Consolas</a>
         </div>
     </section>
     <section class="productos">
@@ -88,7 +88,7 @@
                 </div>
             </div>
         </section>
-        <section class="porductos__seccion">
+        <section class="porductos__seccion" id="consolas">
             <div class="porductos__seccion--contenedor_titulo">
                 <h3 class="porductos__seccion--titulo">Consolas</h3>
                 <a href="#" class="porductos__seccion--ver_todo">Ver todo</a>
@@ -192,9 +192,16 @@
             </div>
             <div class="rodapie__inputs">
                 <h4 class="rodapie__inputs--invitacion">Hable con nosotros</h4>
-                <input class="rodapie__inputs--item" placeholder="Nombre">
-                <input class="rodapie__inputs--item" placeholder="Escribe tu mensaje">
-                <button class="rodapie__inputs--boton_enviar" >Enviar mensaje</button>
+                <div>
+                    <label class="rodapie__inputs--label">Nombre</label>
+                    <input class="rodapie__inputs--item" id="rodapie_input_nombre">
+                </div>
+                <div>
+                    <label class="rodapie__inputs--label">Escribe tu mensaje</label>
+                    <input class="rodapie__inputs--item" id="rodapie_input_mensaje">
+                </div>
+                <button class="rodapie__inputs--boton_enviar" id="rodapie_enviar_datos" disabled>Enviar mensaje</button>
+                <label id="rodapie__inputs--mensaje_error"></label>
             </div>
         </div>
         <div class="rodapie__datos_desarrollador">
@@ -203,4 +210,6 @@
         </div>
     </section>
 </body>
+<script src="./JS/evaluarCamposVaciosRodapie.js"></script>
+<script src="./JS/resultadoEnvioRodapie.js" type="module"></script>
 </html>

@@ -27,9 +27,10 @@
     </section>
     <section class="seccion_login">
         <h3 class="seccion_login--solicitud">Inicie Sesión</h3>
-        <input class="seccion_login--input" placeholder="Escriba su correo electrónico">
-        <input class="seccion_login--input" placeholder="Escriba su contraseña">
-        <button class="seccion_login--boton_enviar" >Entrar</button>
+        <input class="seccion_login--input" id="correo_electronico" placeholder="Escriba su correo electrónico">
+        <input class="seccion_login--input" id="contrasena" placeholder="Escriba su contraseña">
+        <button class="seccion_login--boton_enviar" id="boton_entrar" disabled>Entrar</button>
+        <label id="seccion_login--mensaje_error"></label>
     </section>
     <section class="rodapie">
         <div class="rodapie__contenido">
@@ -46,9 +47,16 @@
             </div>
             <div class="rodapie__inputs">
                 <h4 class="rodapie__inputs--invitacion">Hable con nosotros</h4>
-                <input class="rodapie__inputs--item" placeholder="Nombre">
-                <input class="rodapie__inputs--item" placeholder="Escribe tu mensaje">
-                <button class="rodapie__inputs--boton_enviar" >Enviar mensaje</button>
+                <div>
+                    <label class="rodapie__inputs--label">Nombre</label>
+                    <input class="rodapie__inputs--item" id="rodapie_input_nombre">
+                </div>
+                <div>
+                    <label class="rodapie__inputs--label">Escribe tu mensaje</label>
+                    <input class="rodapie__inputs--item" id="rodapie_input_mensaje">
+                </div>
+                <button class="rodapie__inputs--boton_enviar" id="rodapie_enviar_datos" disabled>Enviar mensaje</button>
+                <label id="rodapie__inputs--mensaje_error"></label>
             </div>
         </div>
         <div class="rodapie__datos_desarrollador">
@@ -57,4 +65,8 @@
         </div>
     </section>
 </body>
+<script src="./JS/evaluarCamposVaciosRodapie.js"></script>
+<script src="./JS/resultadoEnvioRodapie.js" type="module"></script>
+<script src="./JS/evaluarCamposVaciosLogin.js"></script>
+<script src="./JS/resultadoEnvioLogin.js" type="module"></script>
 </html>
