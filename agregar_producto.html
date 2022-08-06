@@ -27,27 +27,31 @@
     </section>
     <section class="seccion_agregar_producto">
         <h2 class="seccion_agregar_producto--solicitud">Agregar nuevo producto</h2>
-        <div>
-            <label class="seccion_agregar_producto--label" for="url_imagen">URL de la imagen</label>
-            <input class="seccion_agregar_producto--input" type="text" id="url_imagen" name="url_imagen">
-        </div>
-        <div>
-            <label class="seccion_agregar_producto--label" for="categoria">Categoria</label>
-            <input class="seccion_agregar_producto--input" type="text" id="categoria" name="categoria">
-        </div>
-        <div>
-            <label class="seccion_agregar_producto--label" for="nombre-producto">Nombre del Producto</label>
-            <input class="seccion_agregar_producto--input" type="text" id="nombre-producto" name="nombre-producto">
-        </div>
-        <div>
-            <label class="seccion_agregar_producto--label" for="precio-del-producto">Precio del Producto</label>
-            <input class="seccion_agregar_producto--input" type="text" id="precio-del-producto" name="precio-del-producto">
-        </div>
-        <div>
-            <label class="seccion_agregar_producto--label" for="descripcion-del-producto">Descripción del Producto</label>
-            <input class="seccion_agregar_producto--input" type="text" id="descripcion-del-producto" name="descripcion-del-producto">
-        </div>
-        <button class="seccion_agregar_producto--boton_agregar">Agregar Producto</button>
+
+        <form id="formulario">
+            <div>
+                <label class="seccion_agregar_producto--label seccion_agregar_producto--label_imagen" for="url_imagen">Arrastre y suelte aqui la imagen del producto</label>
+                <img src="./imagenes/enBlanco.jpg" class="seccion_agregar_producto--input seccion_agregar_producto--soltar_imagen" id="url_imagen" name="url_imagen" data-imagen-producto>
+            </div>
+            <div>
+                <label class="seccion_agregar_producto--label" for="nombre-producto">Nombre del Producto</label>
+                <input class="seccion_agregar_producto--input" id="nombre_producto" type="text" name="nombre-producto" data-nombre-producto required
+                pattern="[A-zñÑ0-9\s]{1,20}" title="Nombre del Producto no debe tener más de 20 caracteres">
+            </div>
+            <div>
+                <label class="seccion_agregar_producto--label" for="precio-del-producto">Precio del Producto</label>
+                <input class="seccion_agregar_producto--input" id="precio_producto" type="text" name="precio-del-producto" data-precio-producto required
+                pattern="^[0-9]{1,10}$" title="Solo se admiten numeros">
+            </div>
+            <div>
+                <label class="seccion_agregar_producto--label" for="descripcion-del-producto">Descripción del Producto</label>
+                <input class="seccion_agregar_producto--input" id="descripcion_producto" type="text" name="descripcion-del-producto" data-descripcion-producto required
+                pattern="[A-zñÑ0-9\s]{1,150}" title="Descripcion del Producto no debe tener más de 150 caracteres">
+            </div>
+            <button type="submit" class="seccion_agregar_producto--boton_agregar" id="boton_agregar_producto">Agregar Producto</button>    
+            <label id="mensaje_error_envio"></label>
+        </form>
+        
     </section>
     <section class="rodapie">
         <div class="rodapie__contenido">
@@ -66,13 +70,14 @@
                 <h4 class="rodapie__inputs--invitacion">Hable con nosotros</h4>
                 <div>
                     <label class="rodapie__inputs--label">Nombre</label>
-                    <input class="rodapie__inputs--item">
+                    <input class="rodapie__inputs--item" id="rodapie_input_nombre">
                 </div>
                 <div>
                     <label class="rodapie__inputs--label">Escribe tu mensaje</label>
-                    <input class="rodapie__inputs--item">
+                    <input class="rodapie__inputs--item" id="rodapie_input_mensaje">
                 </div>
-                <button class="rodapie__inputs--boton_enviar" >Enviar mensaje</button>
+                <button class="rodapie__inputs--boton_enviar" id="rodapie_enviar_datos" disabled>Enviar mensaje</button>
+                <label id="rodapie__inputs--mensaje_error"></label>
             </div>
         </div>
         <div class="rodapie__datos_desarrollador">
@@ -81,4 +86,7 @@
         </div>
     </section>
 </body>
+<script src="./JS/evaluarCamposVaciosRodapie.js"></script>
+<script src="./JS/resultadoEnvioRodapie.js" type="module"></script>
+<script src="./JS/resultadoEnvioAgregarProducto.js" type="module"></script>
 </html>

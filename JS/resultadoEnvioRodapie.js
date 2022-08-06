@@ -17,13 +17,13 @@ botonEnviar.addEventListener('click', (evento) => {
         mensaje: ""
     };
 
-    let nombreValido = false;
-    let mensajeValido = false;
+    let nombreInvalido = false;
+    let mensajeInvalido = false;
 
     const inputNombre = evento.path[1].childNodes[3].lastElementChild.value;
 
     if(!validarNombre(inputNombre)) {
-        nombreValido = true;
+        nombreInvalido = true;
         evento.path[1].lastElementChild.innerText += 
         " Nombre debe tener la primera letra en mayúscula, el resto en minúscula, sin espacios y un máximo de 40 caracteres.";
     }
@@ -31,12 +31,12 @@ botonEnviar.addEventListener('click', (evento) => {
     const inputMensaje = evento.path[1].childNodes[5].lastElementChild.value;
 
     if(!validarMensaje(inputMensaje)) {
-        mensajeValido = true;
+        mensajeInvalido = true;
         evento.path[1].lastElementChild.innerText += 
         " Mensaje no debe superar los 120 caracteres.";
     }
 
-    if(!nombreValido && !mensajeValido) {
+    if(!nombreInvalido && !mensajeInvalido) {
         inputDatos.nombre = inputNombre;
         inputDatos.mensaje = inputMensaje;
         evento.path[1].lastElementChild.innerText = "Datos enviados con éxito";

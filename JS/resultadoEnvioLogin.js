@@ -18,19 +18,19 @@ botonEntrar.addEventListener('click', (evento) => {
             contrasena: "amanecer905"
         }];
 
-    let eMailValido = false;
+    let eMailInvalido = false;
 
     const inputEmail = evento.path[1].childNodes[3].value;
 
     if(!validarEmail(inputEmail)) {
-        eMailValido = true;
+        eMailInvalido = true;
         evento.path[0].nextElementSibling.innerText += 
         " E-mail debe tener por lo menos 3 caracteresantes del '@', 'gmail' o 'yahoo' despues de este finalizado con ''.com y no tener espacios.";
     }
 
     const inputContrasena = evento.path[1].childNodes[5].value;
 
-    if(!eMailValido) {
+    if(!eMailInvalido) {
 
         for(let i = 0; i <= datosAdministradores.length - 1; i++) {
             console.log(datosAdministradores[i]);
