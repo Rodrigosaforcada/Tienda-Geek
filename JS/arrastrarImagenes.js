@@ -61,6 +61,18 @@ function actualizarContenedorImagen(inputImagenContenedor, file) {
         reader.readAsDataURL(file);
         reader.onload = () => {
             previsualizacionImagen.style.backgroundImage = `url('${ reader.result }')`;
+
+            //console.log(reader.result);
+
+            let coincidencias = [reader.result + ""];
+    
+            let cantidadCaracteres = 0; 
+            
+            coincidencias.forEach(coincidencia => {
+                cantidadCaracteres += coincidencia.length;
+            });
+            console.log('cantidad de caracteres en Imagen en base64 provisoria: ' + cantidadCaracteres);
+
             previsualizacionImagen.style.backgroundRepeat = 'no-repeat';
             previsualizacionImagen.style.backgroundSize = 'contain';
         };

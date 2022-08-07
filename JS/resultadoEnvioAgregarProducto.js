@@ -6,10 +6,32 @@ formulario.addEventListener('submit', (evento) => {
     console.log(evento);
 
     const inputDatos = {
+        ImagenProducto: "",
         nombreProducto: "",
         precioProducto: "",
         descripcionProducto: ""
     };
+
+    if(document.querySelector(".imagen_arrastre--previsualizacion")) {
+        
+        const regExImagenBase64 = /data:image.{1,}=/; 
+
+        inputDatos.ImagenProducto = document.querySelector(".imagen_arrastre--previsualizacion").style.backgroundImage.match(regExImagenBase64);
+        //console.log(inputDatos.ImagenProducto[0]);
+        
+        let coincidencias = inputDatos.ImagenProducto;
+    
+        let cantidadCaracteres = 0; 
+        
+        coincidencias.forEach(coincidencia => {
+            cantidadCaracteres += coincidencia.length;
+        });
+        console.log('cantidad de caracteres en Imagen en base64 enviada: ' + cantidadCaracteres);
+    } else {
+        evento.path[0].nextElementSibling.style.display = "block";
+        evento.path[0].nextElementSibling.innerText = "No se ha seleccionado ninguna foto para el producto.";
+        return ;
+    }
 
     const inputNombreProducto = document.querySelector('[data-nombre-producto]').value;
 
@@ -35,8 +57,10 @@ formulario.addEventListener('submit', (evento) => {
     inputDatos.precioProducto = inputPrecioProducto;
     inputDatos.descripcionProducto = inputDescripcionProducto;
 
-    evento.path[1].childNodes[5].innerText += "Producto agregado con éxito.";
+    evento.path[0].nextElementSibling.style.display = "block";
+    evento.path[0].nextElementSibling.innerText = "Producto agregado con éxito.";
 
+    console.log(inputDatos.ImagenProducto);
     console.log(inputDatos.nombreProducto);
     console.log(inputDatos.precioProducto);
     console.log(inputDatos.descripcionProducto);
