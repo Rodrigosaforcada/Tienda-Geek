@@ -35,6 +35,8 @@ formulario.addEventListener('submit', (evento) => {
     inputDatos.precioProducto = inputPrecioProducto;
     inputDatos.descripcionProducto = inputDescripcionProducto;
 
+    evento.path[1].childNodes[5].innerText += "Producto agregado con éxito.";
+
     console.log(inputDatos.nombreProducto);
     console.log(inputDatos.precioProducto);
     console.log(inputDatos.descripcionProducto);

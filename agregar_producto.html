@@ -29,9 +29,10 @@
         <h2 class="seccion_agregar_producto--solicitud">Agregar nuevo producto</h2>
 
         <form id="formulario">
-            <div>
-                <label class="seccion_agregar_producto--label seccion_agregar_producto--label_imagen" for="url_imagen">Arrastre y suelte aqui la imagen del producto</label>
-                <img src="./imagenes/enBlanco.jpg" class="seccion_agregar_producto--input seccion_agregar_producto--soltar_imagen" id="url_imagen" name="url_imagen" data-imagen-producto>
+            <div class="seccion_agregar_producto--input_imagen">
+                <span class="seccion_agregar_producto--span_imagen" for="url_imagen">
+                    Arrastre y suelte aqui la imagen del producto o haga <button id="cargar_imagen">click aqui</button> para seleccionar una imagen</span>
+                <input type="file" class="seccion_agregar_producto--soltar_imagen" id="url_imagen" name="url_imagen" data-imagen-producto>
             </div>
             <div>
                 <label class="seccion_agregar_producto--label" for="nombre-producto">Nombre del Producto</label>
@@ -49,8 +50,8 @@
                 pattern="[A-zñÑ0-9\s]{1,150}" title="Descripcion del Producto no debe tener más de 150 caracteres">
             </div>
             <button type="submit" class="seccion_agregar_producto--boton_agregar" id="boton_agregar_producto">Agregar Producto</button>    
-            <label id="mensaje_error_envio"></label>
         </form>
+        <label id="mensaje_envio_exitoso"></label>
         
     </section>
     <section class="rodapie">
@@ -89,4 +90,5 @@
 <script src="./JS/evaluarCamposVaciosRodapie.js"></script>
 <script src="./JS/resultadoEnvioRodapie.js" type="module"></script>
 <script src="./JS/resultadoEnvioAgregarProducto.js" type="module"></script>
+<script src="./JS/arrastrarImagenes.js"></script>
 </html>

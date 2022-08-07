@@ -10,6 +10,30 @@
     margin-bottom: 1rem;
 }
 
+.seccion_agregar_producto--input_imagen {
+    border: 4px dashed lightseagreen;
+    border-radius: 5px;
+    width: 35vw;
+    height: 20vw;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    cursor: pointer;
+}
+
+.imagen_arrastre--sobre_encuadre {
+    border-color: crimson;
+}
+
+.imagen_arrastre--previsualizacion {
+    background-color: lightgoldenrodyellow;
+    height: 14vw;
+    width: 14vw;
+    border-radius: 10px;
+    margin-top: calc(100%*0.03);
+}
+
 .seccion_agregar_producto--label {
     color: rgb(163, 163, 163);
     padding: 2px 0 0 10px;
@@ -19,8 +43,16 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.seccion_agregar_producto--label_imagen {
-    padding: 120px 0 0 calc(4vw);
+.seccion_agregar_producto--span_imagen {
+    text-align: center;
+    display: block;
+    color: rgb(128, 128, 128);
+    font-size: 120%;
+    margin: 9vw 4vw;
+}
+
+#cargar_imagen {
+    font-size: 100%;
 }
 
 .seccion_agregar_producto--input {
@@ -30,8 +62,10 @@
 }
 
 .seccion_agregar_producto--soltar_imagen {
-    border: 2px dashed rgb(170, 170, 170);
-    padding: 100px 0;
+    display: none;
+    height: 35vw;
+    width: 35vw;
+    margin-bottom: 1rem;
 }
 
 .seccion_agregar_producto--boton_agregar {
@@ -43,6 +77,18 @@
     font-size: 130%;
     border-radius: 5px;
     margin-bottom: 1rem;
+}
+
+#mensaje_envio_exitoso {
+    display: none;
+    color: rgb(95, 95, 255);
+    font-size: 120%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(136, 209, 255);
+    border-radius: 5px;
+    width: 35.3vw;
+    padding: 10px 0;
+    text-align: center;
 }
 
 @media screen and (max-width: 768px) {
