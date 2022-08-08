@@ -1,0 +1,16 @@
+{
+    "productos": [
+        {
+            "nombre": "Peluche Chewbacca",
+            "id": 1,
+            "precio": "50$",
+            "imagen": "./imagenes/chewbacca-peluche.jpg"
+        },
+        {
+            "nombre": "Llavero Stormtrooper",
+            "id": 2,
+            "precio": "30$",
+            "imagen": "./imagenes/llavero-stormtrooper-con-linterna.png"
+        }
+    ]
+}
