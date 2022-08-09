@@ -11,6 +11,102 @@
             "id": 2,
             "precio": "30$",
             "imagen": "./imagenes/llavero-stormtrooper-con-linterna.png"
+        },
+        {
+            "nombre": "Peluche Yoda",
+            "id": 3,
+            "precio": "120$",
+            "imagen": "./imagenes/peluche-yoda.jpg"
+        },
+        {
+            "nombre": "Darth Vader Cabezon",
+            "id": 4,
+            "precio": "65$",
+            "imagen": "./imagenes/darth-vader-cabezon.jpg"
+        },
+        {
+            "nombre": "Nave del Imperio",
+            "id": 5,
+            "precio": "180$",
+            "imagen": "./imagenes/nave-imperio-ladrillos.jpg"
+        },
+        {
+            "nombre": "Anakin Skywalker",
+            "id": 6,
+            "precio": "85$",
+            "imagen": "./imagenes/anakin-skywalker.jpg"
+        },
+        {
+            "nombre": "Xbox One con mando",
+            "id": 7,
+            "precio": "560$",
+            "imagen": "./imagenes/xbox-one-mando.jpg"
+        },
+        {
+            "nombre": "PS5 con mando",
+            "id": 8,
+            "precio": "560$",
+            "imagen": "./imagenes/ps5-mando.jpg"
+        },
+        {
+            "nombre": "Nintendo Switch",
+            "id": 9,
+            "precio": "230$",
+            "imagen": "./imagenes/nintendo-switch.jpg"
+        },
+        {
+            "nombre": "Wii",
+            "id": 10,
+            "precio": "450$",
+            "imagen": "./imagenes/wii.jpg"
+        },
+        {
+            "nombre": "Xbox Series X",
+            "id": 11,
+            "precio": "670$",
+            "imagen": "./imagenes/Xbox-Series-X.jpg"
+        },
+        {
+            "nombre": "PS4",
+            "id": 12,
+            "precio": "420$",
+            "imagen": "./imagenes/sony-playstation-4.jpg"
+        },
+        {
+            "nombre": "Remera Skyrim",
+            "id": 13,
+            "precio": "15$",
+            "imagen": "./imagenes/remera-skyrim.jpg"
+        },
+        {
+            "nombre": "Peluche Pikachu",
+            "id": 14,
+            "precio": "25$",
+            "imagen": "./imagenes/peluche-pikachu.jpg"
+        },
+        {
+            "nombre": "Sonic",
+            "id": 15,
+            "precio": "80$",
+            "imagen": "./imagenes/sonic.jpg"
+        },
+        {
+            "nombre": "Casco VR",
+            "id": 16,
+            "precio": "900$",
+            "imagen": "./imagenes/casco-vr.jpg"
+        },
+        {
+            "nombre": "Control Especial",
+            "id": 17,
+            "precio": "99$",
+            "imagen": "./imagenes/control-unico.jpg"
+        },
+        {
+            "nombre": "Mando para celular",
+            "id": 18,
+            "precio": "150$",
+            "imagen": "./imagenes/mando-para-celular.jpg"
         }
     ]
 }

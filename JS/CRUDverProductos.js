@@ -13,7 +13,7 @@ const crearNuevoProducto = (imagen, nombre, precio) => {
     return producto;
 };
 
-const seccionProductos = document.querySelector(".todos_los_productos");
+const seccionProductos = document.querySelector(".todos_los_productos--contenedor");
 
 const http = new XMLHttpRequest();
 
