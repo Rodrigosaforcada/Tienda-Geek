@@ -14,18 +14,23 @@ formulario.addEventListener('submit', (evento) => {
 
     if(document.querySelector(".imagen_arrastre--previsualizacion")) {
         
-        const regExImagenBase64 = /data:image.{1,}=/; 
+        const regExImagenBase64 = /data:image.{1,}"/; 
 
-        inputDatos.ImagenProducto = document.querySelector(".imagen_arrastre--previsualizacion").style.backgroundImage.match(regExImagenBase64);
-        //console.log(inputDatos.ImagenProducto[0]);
+        let datosImagen = document.querySelector(".imagen_arrastre--previsualizacion").style.backgroundImage.match(regExImagenBase64);
+        
+        for(let i = 0; i < datosImagen[0].length; i++) {
+            inputDatos.ImagenProducto += datosImagen[0][i];
+        }
+        console.log(inputDatos.ImagenProducto);
         
         let coincidencias = inputDatos.ImagenProducto;
     
         let cantidadCaracteres = 0; 
         
-        coincidencias.forEach(coincidencia => {
-            cantidadCaracteres += coincidencia.length;
-        });
+        for(let i = 0; i < coincidencias.length - 1; i++) {
+            cantidadCaracteres += 1;
+        }
+
         console.log('cantidad de caracteres en Imagen en base64 enviada: ' + cantidadCaracteres);
     } else {
         evento.path[0].nextElementSibling.style.display = "block";
