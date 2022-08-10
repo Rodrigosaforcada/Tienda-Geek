@@ -2,7 +2,7 @@
 
 const crearNuevoProducto = (imagen, nombre, precio) => {
     const producto = document.createElement("div");
-    producto.classList.add("productos__item");
+    producto.classList.add("todos_los_productos--item");
     const contenido = `
         <img class="productos__item--imagen" src="${imagen}">
         <h5 class="productos__item--titulo_producto">${nombre}</h5>

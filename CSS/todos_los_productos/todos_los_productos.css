@@ -1,7 +1,7 @@
 .todos_los_productos--contenedor {
     display: grid;
-    grid-template-columns: calc(100vw / 6.5) calc(100vw / 6.5) calc(100vw / 6.5) calc(100vw / 6.5) calc(100vw / 6.5) calc(100vw / 6.5);
-    text-align: center;
+    grid-template-columns: calc(90vw / 6) calc(90vw / 6) calc(90vw / 6) calc(90vw / 6) calc(90vw / 6) calc(90vw / 6);
+    margin: 1rem 5vw;
 }
 
 .todos_los_productos--titulo {
@@ -9,16 +9,22 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.todos_los_productos--item {
+    margin-bottom: 1rem;
+    width: fit-content;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 @media screen and (max-width: 768px) {
     .todos_los_productos--contenedor {
         display: grid;
-        grid-template-columns: calc(100vw / 4) calc(100vw / 4) calc(100vw / 4) calc(100vw / 4);
+        grid-template-columns: calc(90vw / 4) calc(90vw / 4) calc(90vw / 4) calc(90vw / 4);
     }
 }
 
 @media screen and (max-width: 360px) {
     .todos_los_productos--contenedor {
         display: grid;
-        grid-template-columns: calc(100vw / 2) calc(100vw / 2);
+        grid-template-columns: calc(90vw / 2) calc(90vw / 2);
     }
 }
