@@ -1,3 +1,5 @@
+import { clientServices } from "../servicio/client-service.js";
+
 //Lectura y creación de cada producto
 
 const crearNuevoProducto = (imagen, nombre, precio) => {
@@ -15,16 +17,14 @@ const crearNuevoProducto = (imagen, nombre, precio) => {
 
 const seccionProductos = document.querySelector(".todos_los_productos--contenedor");
 
-const http = new XMLHttpRequest();
 
-http.open('GET', "http://localhost:3000/productos");
 
-http.send();
-
-http.onload = () => {
-    const data = JSON.parse(http.response);
-    data.forEach((productos) => {
-        const nuevoProducto = crearNuevoProducto(productos.imagen, productos.nombre, productos.precio);
+clientServices
+.listaProductos()
+    .then((data) => {
+    data.forEach((producto) => {
+        const nuevoProducto = crearNuevoProducto(producto.imagen, producto.nombre, producto.precio);
         seccionProductos.appendChild(nuevoProducto);
     });
-};
+    })
+    .catch((error) => alert('Ocurrió un error'));
