@@ -1,3 +1,5 @@
+import { clientServices } from "../servicio/client-service.js";
+
 const formulario = document.querySelector("#formulario");
 
 formulario.addEventListener('submit', (evento) => {
@@ -69,4 +71,11 @@ formulario.addEventListener('submit', (evento) => {
     console.log(inputDatos.nombreProducto);
     console.log(inputDatos.precioProducto);
     console.log(inputDatos.descripcionProducto);
+
+    clientServices
+        .crearProducto(inputDatos.ImagenProducto, inputDatos.nombreProducto, inputDatos.precioProducto, inputDatos.descripcionProducto)
+        .then((respuesta) => {
+            window.location.href = "ver_todo_productos.html";
+        })
+        .catch((err) => console.log(err));
 });
