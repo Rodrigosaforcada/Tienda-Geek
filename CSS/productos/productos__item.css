@@ -16,6 +16,23 @@
     color: rgb(50, 176, 255);
 }
 
+.productos__item--editar {
+    display: block;
+    color: rgb(127, 207, 127);
+    text-decoration: none;
+}
+
+.productos__item--eliminar {
+    color: crimson;
+    text-decoration: none;
+}
+
+.productos__item--vinculo,
+.productos__item--editar,
+.productos__item--eliminar {
+    font-size: 105%;
+}
+
 @media screen and (max-width: 768px) {
     .productos__item--ocultar {
         display: none;

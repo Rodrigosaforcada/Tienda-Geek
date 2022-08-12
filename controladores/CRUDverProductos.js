@@ -10,6 +10,8 @@ const crearNuevoProducto = (imagen, nombre, precio) => {
         <h5 class="productos__item--titulo_producto">${nombre}</h5>
         <p>${precio}</p>
         <a class="productos__item--vinculo" href="#">Ver Producto</a>
+        <a class="productos__item--editar" href="#">Editar</a>
+        <a class="productos__item--eliminar" href="#">Eliminar</a>
     `;
     producto.innerHTML = contenido;
     return producto;

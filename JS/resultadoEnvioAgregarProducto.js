@@ -61,7 +61,7 @@ formulario.addEventListener('submit', (evento) => {
     console.log(inputDescripcionProducto.match(regExDescripcionProducto));
 
     inputDatos.nombreProducto = inputNombreProducto;
-    inputDatos.precioProducto = inputPrecioProducto;
+    inputDatos.precioProducto = inputPrecioProducto + "$";
     inputDatos.descripcionProducto = inputDescripcionProducto;
 
     evento.path[0].nextElementSibling.style.display = "block";
