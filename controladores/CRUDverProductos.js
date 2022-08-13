@@ -2,18 +2,29 @@ import { clientServices } from "../servicio/client-service.js";
 
 //Lectura y creación de cada producto
 
-const crearNuevoProducto = (imagen, nombre, precio) => {
+const crearNuevoProducto = (id, imagen, nombre, precio) => {
     const producto = document.createElement("div");
     producto.classList.add("todos_los_productos--item");
     const contenido = `
         <img class="productos__item--imagen" src="${imagen}">
         <h5 class="productos__item--titulo_producto">${nombre}</h5>
         <p>${precio}</p>
-        <a class="productos__item--vinculo" href="#">Ver Producto</a>
-        <a class="productos__item--editar" href="#">Editar</a>
-        <a class="productos__item--eliminar" href="#">Eliminar</a>
+        <a class="productos__item--vinculo" id="${id}" href="#">Ver Producto</a>
+        <a class="productos__item--editar" id="${id}" href="#">Editar</a>
+        <a class="productos__item--eliminar" id="${id}" href="#">Eliminar</a>
     `;
     producto.innerHTML = contenido;
+    const botonEliminar = producto.querySelector('.productos__item--eliminar');
+    botonEliminar.addEventListener("click", () => {
+        const id = botonEliminar.id;
+        clientServices
+            .eliminarProducto(id)
+            .then((respuesta) => {
+                console.log(respuesta);
+            })
+            .catch((err) => alert("Ocurrió un error"));
+    });
+
     return producto;
 };
 
@@ -25,7 +36,7 @@ clientServices
 .listaProductos()
     .then((data) => {
     data.forEach((producto) => {
-        const nuevoProducto = crearNuevoProducto(producto.imagen, producto.nombre, producto.precio);
+        const nuevoProducto = crearNuevoProducto(producto.id, producto.imagen, producto.nombre, producto.precio);
         seccionProductos.appendChild(nuevoProducto);
     });
     })

@@ -9,10 +9,18 @@ const crearProducto = (imagen, nombre, precio, descripcion) => {
             "Content-type": "application/json"
         },
         body: JSON.stringify({id: uuid.v4(), imagen, nombre, precio, descripcion})
-    })
-}
+    });
+};
 
-    export const clientServices = {
+const eliminarProducto = (id) => {
+    console.log("Se elimina el producto con el id: ");
+    return fetch(`http://localhost:3000/productos/${id}`, {
+        method: "DELETE",
+    });
+};
+
+export const clientServices = {
     listaProductos,
     crearProducto,
+    eliminarProducto,
 };
