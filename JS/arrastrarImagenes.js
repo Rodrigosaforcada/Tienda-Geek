@@ -38,7 +38,7 @@ function actualizarContenedorImagen(inputImagenContenedor, file) {
     console.log(inputImagenContenedor);
     console.log(file);
 
-    let previsualizacionImagen = inputImagenContenedor.querySelector('imagen_arrastre--previsualizacion');
+    let previsualizacionImagen = inputImagenContenedor.querySelector('.imagen_arrastre--previsualizacion');
     
     //Al colocarse una imagen se elimina el mensaje aclarativo o la etiqueta span en este caso
     if(document.querySelector(".seccion_agregar_producto--span_imagen")) {
@@ -50,7 +50,7 @@ function actualizarContenedorImagen(inputImagenContenedor, file) {
         previsualizacionImagen = document.createElement("div");
         previsualizacionImagen.classList.add("imagen_arrastre--previsualizacion");
         inputImagenContenedor.appendChild(previsualizacionImagen);
-    }
+    } 
 
     previsualizacionImagen.dataset.label = file.name;
 

@@ -5,15 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/reset.css">
+    <link rel="stylesheet" href="./CSS/ajuste_body.css">
     <link rel="stylesheet" href="./CSS/barra_de_busqueda/barra_de_busqueda.css">
     <link rel="stylesheet" href="./CSS/barra_de_busqueda/barra_de_busqueda__logo.css">
     <link rel="stylesheet" href="./CSS/barra_de_busqueda/barra_de_busqueda__ingresar_solicitud.css">
     <link rel="stylesheet" href="./CSS/barra_de_busqueda/barra_de_busqueda__boton_login.css">
     <link rel="stylesheet" href="./CSS/barra_de_busqueda/barra_de_busqueda__contenedor_boton_login.css">
-    <link rel="stylesheet" href="./CSS/todos_los_productos/todos_los_productos.css">
-    <link rel="stylesheet" href="./CSS/productos/porductos__seccion.css">
-    <link rel="stylesheet" href="./CSS/productos/productos__categoria.css">
-    <link rel="stylesheet" href="./CSS/productos/productos__item.css">
+    <link rel="stylesheet" href="./CSS/agregar-producto/seccion_agregar_producto.css">
     <link rel="stylesheet" href="./CSS/rodapie/rodapie.css">
     <link rel="stylesheet" href="./CSS/rodapie/rodapie__contenido.css">
     <link rel="stylesheet" href="./CSS/rodapie/rodapie__logo.css">
@@ -22,22 +20,38 @@
     <link rel="stylesheet" href="./CSS/rodapie/rodapie__datos_desarrollador.css">
     <title>Tienda Geek</title>
 </head>
-<body>
+<body class="ajuste_body">
     <section class="barra_de_busqueda">
         <a href="./index.html"><img class="barra_de_busqueda__logo" src="./imagenes/Logo.png"></a>
         <input class="barra_de_busqueda__ingresar_solicitud" placeholder="¿Que deseas buscar?">
-        <div class="barra_de_busqueda__contenedor_boton_login">
-            <a class="barra_de_busqueda__boton_login barra_de_busqueda__boton_login--vinculo" href="./login.html">Login</a>
-        </div>
     </section>
-    <section class="todos_los_productos">
-        <div class="todos_los_productos--contenedor_encabezado">
-            <h2 class="todos_los_productos--titulo">Todos los productos</h2>
-            <a href="agregar_producto.html"><button class="todos_los_productos--boton_agregar_producto" id="boton_agregar_producto">Agregar Producto</button></a>
-        </div>
-        <div class="todos_los_productos--contenedor">
+    <section class="seccion_agregar_producto">
+        <h2 class="seccion_agregar_producto--solicitud">Cambiar datos del producto</h2>
 
-        </div>
+        <form id="formulario">
+            <div class="seccion_agregar_producto--input_imagen">
+                <span class="seccion_agregar_producto--span_imagen" for="url_imagen">
+                    Arrastre y suelte aqui la imagen del producto o haga <button id="cargar_imagen">click aqui</button> para seleccionar una imagen</span>
+                    <input type="file" class="seccion_agregar_producto--soltar_imagen" placeholder="" id="url_imagen" name="url_imagen" data-imagen-producto>
+            </div>
+            <div>
+                <label class="seccion_agregar_producto--label" for="nombre-producto">Nombre del Producto</label>
+                <input class="seccion_agregar_producto--input" id="nombre_producto" type="text" name="nombre-producto" data-nombre-producto required
+                pattern="[A-zñÑ0-9\s]{1,20}" title="Nombre del Producto no debe tener más de 20 caracteres">
+            </div>
+            <div>
+                <label class="seccion_agregar_producto--label" for="precio-del-producto">Precio del Producto</label>
+                <input class="seccion_agregar_producto--input" id="precio_producto" type="text" name="precio-del-producto" data-precio-producto required
+                pattern="^[0-9]{1,10}$" title="Solo se admiten numeros">
+            </div>
+            <div>
+                <label class="seccion_agregar_producto--label" for="descripcion-del-producto">Descripción del Producto</label>
+                <input class="seccion_agregar_producto--input" id="descripcion_producto" type="text" name="descripcion-del-producto" data-descripcion-producto required
+                pattern="[A-zñÑ0-9\s]{1,150}" title="Descripcion del Producto no debe tener más de 150 caracteres">
+            </div>
+            <button type="submit" class="seccion_agregar_producto--boton_agregar" id="boton_agregar_producto">Editar Producto</button>    
+        </form>
+        <label id="mensaje_envio_exitoso"></label>
         
     </section>
     <section class="rodapie">
@@ -73,7 +87,8 @@
         </div>
     </section>
 </body>
+<script src="./JS/arrastrarImagenes.js"></script>
+<script src="./controladores/actualizar.controller.js" type="module"></script>
 <script src="./JS/evaluarCamposVaciosRodapie.js"></script>
-<script src="./controladores/client.controller.js" type="module"></script>
 <script src="./JS/resultadoEnvioRodapie.js" type="module"></script>
 </html>

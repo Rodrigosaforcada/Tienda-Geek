@@ -19,8 +19,15 @@ const eliminarProducto = (id) => {
     });
 };
 
+const detalleCliente = (id) => {
+    return fetch(`http://localhost:3000/productos/${id}`).then((respuesta) => 
+        respuesta.json()
+    );
+};
+
 export const clientServices = {
     listaProductos,
     crearProducto,
     eliminarProducto,
+    detalleCliente,
 };
