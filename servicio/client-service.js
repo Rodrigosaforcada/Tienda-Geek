@@ -25,9 +25,22 @@ const detalleCliente = (id) => {
     );
 };
 
+const actualizarProducto = (id, imagen, nombre, precio, descripcion) => {
+    return fetch(`http://localhost:3000/productos/${id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ imagen, nombre, precio, descripcion }),
+    })
+    .then((respuesta) => console.log(respuesta))
+    .catch((err) => console.log(err));
+};
+
 export const clientServices = {
     listaProductos,
     crearProducto,
     eliminarProducto,
     detalleCliente,
+    actualizarProducto,
 };
