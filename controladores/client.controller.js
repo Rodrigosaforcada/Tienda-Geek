@@ -9,7 +9,7 @@ const crearNuevoProducto = (id, imagen, nombre, precio) => {
         <img class="productos__item--imagen" src="${imagen}">
         <h5 class="productos__item--titulo_producto">${nombre}</h5>
         <p>${precio}</p>
-        <a class="productos__item--vinculo" id="${id}" href="#">Ver Producto</a>
+        <a class="productos__item--vinculo" id="${id}" href="ver_un_producto.html?id=${id}">Ver Producto</a>
         <a class="productos__item--editar" id="${id}" href="editar_producto.html?id=${id}">Editar</a>
         <a class="productos__item--eliminar" id="${id}" href="#">Eliminar</a>
     `;

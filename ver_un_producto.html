@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/reset.css">
+    <link rel="stylesheet" href="./CSS/barra_de_busqueda/barra_de_busqueda.css">
+    <link rel="stylesheet" href="./CSS/barra_de_busqueda/barra_de_busqueda__logo.css">
+    <link rel="stylesheet" href="./CSS/barra_de_busqueda/barra_de_busqueda__ingresar_solicitud.css">
+    <link rel="stylesheet" href="./CSS/barra_de_busqueda/barra_de_busqueda__boton_login.css">
+    <link rel="stylesheet" href="./CSS/barra_de_busqueda/barra_de_busqueda__contenedor_boton_login.css">
+    <link rel="stylesheet" href="./CSS/ver-producto/ver_producto.css">
+    <link rel="stylesheet" href="./CSS/rodapie/rodapie.css">
+    <link rel="stylesheet" href="./CSS/rodapie/rodapie__contenido.css">
+    <link rel="stylesheet" href="./CSS/rodapie/rodapie__logo.css">
+    <link rel="stylesheet" href="./CSS/rodapie/rodapie__contacto.css">
+    <link rel="stylesheet" href="./CSS/rodapie/rodapie__inputs.css">
+    <link rel="stylesheet" href="./CSS/rodapie/rodapie__datos_desarrollador.css">
+    <title>Tienda Geek</title>
+</head>
+<body>
+    <section class="barra_de_busqueda">
+        <a href="./index.html"><img class="barra_de_busqueda__logo" src="./imagenes/Logo.png"></a>
+        <input class="barra_de_busqueda__ingresar_solicitud" placeholder="¿Que deseas buscar?">
+        <div class="barra_de_busqueda__ingresar_solicitud--resultados"></div>
+        <div class="barra_de_busqueda__contenedor_boton_login">
+            <a class="barra_de_busqueda__boton_login barra_de_busqueda__boton_login--vinculo" href="./login.html">Login</a>
+        </div>
+    </section>
+    <section class="ver_producto">
+        
+        <div class="ver_producto--imagen"></div>
+        <h3 class="ver_producto--titulo"></h3>
+        <p class="ver_producto--precio"></p>
+        <p class="ver_producto--descripcion"></p>
+        
+    </section>
+    <section class="rodapie">
+        <div class="rodapie__contenido">
+            <img class="rodapie__logo" src="./imagenes/Logo.png">
+            <div class="rodapie__contacto">
+                <ul class="rodapie__contacto--lista">
+                    <li class="rodapie__contacto--lista_item">Quienes somos</li>
+                    <li class="rodapie__contacto--lista_item">Politica de privacidad</li>
+                    <li class="rodapie__contacto--lista_item">Programa de fidelidad</li>
+                    <li class="rodapie__contacto--lista_item">Nuestras Tiendas</li>
+                    <li class="rodapie__contacto--lista_item">Quiero ser franquiciado</li>
+                    <li class="rodapie__contacto--lista_item">Anuncie Aqui</li>
+                </ul>
+            </div>
+            <div class="rodapie__inputs">
+                <h4 class="rodapie__inputs--invitacion">Hable con nosotros</h4>
+                <div>
+                    <label class="rodapie__inputs--label">Nombre</label>
+                    <input class="rodapie__inputs--item" id="rodapie_input_nombre">
+                </div>
+                <div>
+                    <label class="rodapie__inputs--label">Escribe tu mensaje</label>
+                    <input class="rodapie__inputs--item" id="rodapie_input_mensaje">
+                </div>
+                <button class="rodapie__inputs--boton_enviar" id="rodapie_enviar_datos" disabled>Enviar mensaje</button>
+                <label id="rodapie__inputs--mensaje_error"></label>
+            </div>
+        </div>
+        <div class="rodapie__datos_desarrollador">
+            <h4>Desarrollado por Rodrigo Saforcada</h4>
+            <p>2022</p>
+        </div>
+    </section>
+</body>
+<script src="./controladores/visualizarUnProducto.js" type="module"></script>
+<script src="./JS/evaluarCamposVaciosRodapie.js"></script>
+<script src="./JS/resultadoEnvioRodapie.js" type="module"></script>
+</html>

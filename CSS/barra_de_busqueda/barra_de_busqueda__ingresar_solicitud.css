@@ -12,9 +12,11 @@
 }
 
 .barra_de_busqueda__ingresar_solicitud--item {
+    font-family: Arial, Helvetica, sans-serif;
     display: block;
     padding: 4px;
     border: 1px solid lightgrey;
+    border-radius: 3px;
     background-color: white;
 }
 

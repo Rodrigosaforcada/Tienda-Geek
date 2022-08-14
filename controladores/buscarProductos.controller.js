@@ -44,6 +44,15 @@ inputBusqueda.addEventListener('keyup', (evento) => {
 
     const busquedaSolicitada = document.querySelector(".barra_de_busqueda__ingresar_solicitud").value;
 
+    const anterioresResultados = document.querySelector(".barra_de_busqueda__ingresar_solicitud--resultados").childNodes;
+        
+        console.log(anterioresResultados);
+        console.log("Total de productos encontrados: " + anterioresResultados.length);
+
+        for(let i = 0; i < anterioresResultados.length; i++) {
+            anterioresResultados[i].remove();
+        }
+
     clientServices
     .listaProductos()
         .then((data) => {
@@ -55,14 +64,5 @@ inputBusqueda.addEventListener('keyup', (evento) => {
         contador = 0;
         })
         .catch((error) => alert('Fallo al intentar conectarse con los datos'));
-
-        const anterioresResultados = document.querySelector(".barra_de_busqueda__ingresar_solicitud--resultados").childNodes;
-        
-        console.log(anterioresResultados);
-
-        for(let i = 0; i < anterioresResultados.length; i++) {
-            anterioresResultados[i].remove();
-        }
-
 });
 
