@@ -4,6 +4,24 @@
     width: 60vw;
 }
 
+.barra_de_busqueda__ingresar_solicitud--resultados {
+    position: absolute;
+    z-index: 2;
+    left: 250px;
+    top: 50px;
+}
+
+.barra_de_busqueda__ingresar_solicitud--item {
+    display: block;
+    padding: 4px;
+    border: 1px solid lightgrey;
+    background-color: white;
+}
+
+.barra_de_busqueda__ingresar_solicitud--item:hover {
+    background-color: lightskyblue;
+}
+
 @media screen and (max-width: 360px) {
     .barra_de_busqueda__ingresar_solicitud {
         display: none;
