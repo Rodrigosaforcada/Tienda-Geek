@@ -1,4 +1,9 @@
 {
+  "homepage": "https://rodrigosaforcada.github.io/Tienda-Geek",
+  "script": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
   "productos": [
     {
       "nombre": "Peluche Chewbacca",
