@@ -6,7 +6,7 @@ const resultadosBusqueda = document.querySelector(".barra_de_busqueda__ingresar_
 
 let contador = 0;
 
-const realizarBusqueda = (nombreBuscado, nombreExistente) => {
+const realizarBusqueda = (nombreBuscado, nombreExistente, idNombreExistente) => {
     let comprobarEquivalencia = false;
     const regExLetras = /[a-zñA-ZÑ]/;
     
@@ -36,7 +36,14 @@ const realizarBusqueda = (nombreBuscado, nombreExistente) => {
         const productoEncontrado = document.createElement("div");
         productoEncontrado.classList.add("barra_de_busqueda__ingresar_solicitud--item");
         productoEncontrado.innerText = nombreExistente;
+        productoEncontrado.id = idNombreExistente;
         resultadosBusqueda.appendChild(productoEncontrado);
+
+        productoEncontrado.addEventListener('click', (evento) => {
+            let identificador = `?id=${productoEncontrado.id}`;
+            let redireccionamiento = "ver_un_producto.html" + identificador;
+            window.location.href = redireccionamiento;
+        });
     }
 }
 
@@ -49,7 +56,7 @@ inputBusqueda.addEventListener('keyup', (evento) => {
         console.log(anterioresResultados);
         console.log("Total de productos encontrados: " + anterioresResultados.length);
 
-        for(let i = 0; i < anterioresResultados.length; i++) {
+        for(let i = anterioresResultados.length - 1; i >= 0; i--) {
             anterioresResultados[i].remove();
         }
 
@@ -57,7 +64,9 @@ inputBusqueda.addEventListener('keyup', (evento) => {
     .listaProductos()
         .then((data) => {
         data.forEach((producto) => {
-            realizarBusqueda(busquedaSolicitada + "", producto.nombre);
+            realizarBusqueda(busquedaSolicitada + "", producto.nombre, producto.id);
+
+
         });
         console.log("Numero de resutados: " + contador);
         console.log("Solicitud buscada: " + busquedaSolicitada);
@@ -65,4 +74,3 @@ inputBusqueda.addEventListener('keyup', (evento) => {
         })
         .catch((error) => alert('Fallo al intentar conectarse con los datos'));
 });
-
