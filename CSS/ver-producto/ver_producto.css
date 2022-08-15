@@ -1,7 +1,27 @@
 .ver_producto {
-    height: 40vh;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.ver_producto--contenedor_datos {
+    width: 30vw;
 }
 
 .ver_producto--imagen {
-    height: 20vh;
+    height: 50vh;
+    width: 50vh;
+}
+
+.ver_producto--titulo {
+    font-size: 200%;
+}
+
+.ver_producto--precio {
+    font-size: 150%;
+}
+
+.ver_producto--descripcion {
+    font-size: 150%;
 }
