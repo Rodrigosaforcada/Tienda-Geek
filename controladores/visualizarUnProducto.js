@@ -6,9 +6,9 @@ const mostrarInformacion = () => {
     const url = new URL(window.location);
     const id = url.searchParams.get('id');
 
-    // if( id === null) {
-    //     window.location.href = "error.html";
-    // }
+    if( id === null) {
+        window.location.href = "error.html";
+    }
 
     const imagen = document.querySelector(".ver_producto--imagen");
 
