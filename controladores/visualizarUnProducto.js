@@ -21,13 +21,20 @@ const mostrarInformacion = () => {
     console.log(precio);
     console.log(descripcion);
 
-    clientServices.detalleCliente(id).then((perfil) => {
-        imagen.style.backgroundImage = `url('${ perfil.imagen }')`;
-        imagen.style.backgroundRepeat = 'no-repeat';
-        imagen.style.backgroundSize = 'contain';
-        nombre.innerText = perfil.nombre;
-        precio.innerText = perfil.precio;
-        descripcion.innerText = perfil.descripcion;
+    clientServices.detalleCliente().then((data) => {
+        data[0]['productos'].forEach((producto) => {
+            if(producto.id == id) {
+                imagen.style.backgroundImage = `url('${ producto.imagen }')`;
+
+                imagen.style.backgroundImage = imagen.style.backgroundImage.replace('"")', '');
+
+                imagen.style.backgroundRepeat = 'no-repeat';
+                imagen.style.backgroundSize = 'contain';
+                nombre.innerText = producto.nombre;
+                precio.innerText = producto.precio;
+                descripcion.innerText = producto.descripcion;
+            }
+        });
     });
 }
 
