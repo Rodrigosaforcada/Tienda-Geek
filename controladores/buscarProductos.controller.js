@@ -63,7 +63,7 @@ inputBusqueda.addEventListener('keyup', (evento) => {
     clientServices
     .listaProductos()
         .then((data) => {
-        data.forEach((producto) => {
+        data[0]['productos'].forEach((producto) => {
             realizarBusqueda(busquedaSolicitada + "", producto.nombre, producto.id);
 
 
