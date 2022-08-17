@@ -28,17 +28,20 @@ const obtenerInformacion = () => {
     console.log(precio);
     console.log(descripcion);
 
-    clientServices.detalleCliente(id).then((perfil) => {
-        previsualizacionImagen.style.backgroundImage = `url('${ perfil.imagen }')`;
-
-        previsualizacionImagen.style.backgroundImage = previsualizacionImagen.style.backgroundImage.replace('"")', '');
-
-        previsualizacionImagen.style.backgroundRepeat = 'no-repeat';
-        previsualizacionImagen.style.backgroundSize = 'contain';
-        nombre.value = perfil.nombre;
-        precio.value = perfil.precio;
-        descripcion.value = perfil.descripcion;
-    });
+    clientServices.detalleCliente().then(respuesta => respuesta[0]['productos'].forEach((producto) => {
+        
+        if(producto.id == id) {
+            previsualizacionImagen.style.backgroundImage = `url('${ producto.imagen }')`;
+    
+            previsualizacionImagen.style.backgroundImage = previsualizacionImagen.style.backgroundImage.replace('"")', '');
+    
+            previsualizacionImagen.style.backgroundRepeat = 'no-repeat';
+            previsualizacionImagen.style.backgroundSize = 'contain';
+            nombre.value = producto.nombre;
+            precio.value = producto.precio;
+            descripcion.value = producto.descripcion;
+        }
+    }));
 }
 
 obtenerInformacion();
@@ -66,7 +69,24 @@ formulario.addEventListener("submit", (evento) => {
     console.log(precio);
     console.log(descripcion);
 
-    clientServices.actualizarProducto(id, imagen, nombre, precio, descripcion).then(() => {
-        window.location.href = "ver_todo_productos.html";
-    });
+    clientServices
+    .listaProductos()
+    .then((data) => {
+        data[0]['productos'].forEach((producto) => {
+            console.log('error1');
+            if(producto.id == id) {
+                producto.nombre = nombre;
+                producto.precio = precio;
+                producto.imagen = imagen;
+                producto.descripcion = descripcion; 
+            }
+        });
+        console.log('error2');
+        clientServices.prepararAPI(data[0]['id']);
+        clientServices.crearProducto(data[0])
+            .then((respuesta) =>
+                window.location.href = "ver_todo_productos.html"
+            );
+    })
+    .catch((error) => alert('Ocurrió un error'));
 });
