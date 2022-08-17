@@ -1,32 +1,29 @@
 //Fetch API
 const listaProductos = () => 
-    fetch("http://localhost:3000/productos").then( respuesta => respuesta.json());
+    fetch("https://62fa820dffd7197707ee1b77.mockapi.io/db").then( respuesta => respuesta.json());
 
-const crearProducto = (imagen, nombre, precio, descripcion) => {
-    return fetch("http://localhost:3000/productos", {
+    const crearProducto = (productoCreado) => {
+    return fetch("https://62fa820dffd7197707ee1b77.mockapi.io/db", {
         method: "POST",
         headers: {
-            "Content-type": "application/json"
+                "Content-type": "application/json"
         },
-        body: JSON.stringify({id: uuid.v4(), imagen, nombre, precio, descripcion})
-    });
+        body: JSON.stringify(productoCreado)
+    }
+    ).then( respuesta => respuesta.json());
 };
 
-const eliminarProducto = (id) => {
-    console.log("Se elimina el producto con el id: ");
-    return fetch(`http://localhost:3000/productos/${id}`, {
+const prepararAPI = (id) => {
+    return fetch(`https://62fa820dffd7197707ee1b77.mockapi.io/db/${id}`, {
         method: "DELETE",
     });
 };
 
-const detalleCliente = (id) => {
-    return fetch(`http://localhost:3000/productos/${id}`).then((respuesta) => 
-        respuesta.json()
-    );
-};
+const detalleCliente = () => 
+    fetch("https://62fa820dffd7197707ee1b77.mockapi.io/db").then( respuesta => respuesta.json());
 
 const actualizarProducto = (id, imagen, nombre, precio, descripcion) => {
-    return fetch(`http://localhost:3000/productos/${id}`, {
+    return fetch(`https://62fa820dffd7197707ee1b77.mockapi.io/db/productos/${id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -40,7 +37,7 @@ const actualizarProducto = (id, imagen, nombre, precio, descripcion) => {
 export const clientServices = {
     listaProductos,
     crearProducto,
-    eliminarProducto,
+    prepararAPI,
     detalleCliente,
     actualizarProducto,
 };
