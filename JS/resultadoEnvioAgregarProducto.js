@@ -72,10 +72,26 @@ formulario.addEventListener('submit', (evento) => {
     console.log(inputDatos.precioProducto);
     console.log(inputDatos.descripcionProducto);
 
+    let resultado = "";
+
     clientServices
-        .crearProducto(inputDatos.ImagenProducto, inputDatos.nombreProducto, inputDatos.precioProducto, inputDatos.descripcionProducto)
+        .listaProductos()
         .then((respuesta) => {
-            window.location.href = "ver_todo_productos.html";
+            resultado = respuesta[0]['productos'].push({
+                nombre: inputDatos.nombreProducto, 
+                id: uuid.v4(), 
+                precio: inputDatos.precioProducto, 
+                imagen: inputDatos.ImagenProducto, 
+                descripcion: inputDatos.descripcionProducto
+            });
+            console.log(respuesta[0]);
+            clientServices.prepararAPI(respuesta[0]['id']);
+            clientServices.crearProducto(respuesta[0])
+                .then((respuesta) =>
+                    window.location.href = "ver_todo_productos.html"
+                );
         })
         .catch((err) => console.log(err));
+
+    
 });
