@@ -17,12 +17,23 @@ const crearNuevoProducto = (id, imagen, nombre, precio) => {
     const botonEliminar = producto.querySelector('.productos__item--eliminar');
     botonEliminar.addEventListener("click", () => {
         const id = botonEliminar.id;
+        let resultado = [];
         clientServices
-            .eliminarProducto(id)
-            .then((respuesta) => {
-                console.log(respuesta);
-            })
-            .catch((err) => alert("Ocurrió un error"));
+        .listaProductos()
+        .then((data) => {
+            data[0]['productos'].forEach((producto) => {
+                if(producto.id != id) {
+                    resultado.push(producto);
+                }
+            });
+            data[0]['productos'] = resultado;
+            clientServices.prepararAPI(data[0]['id']);
+            clientServices.crearProducto(data[0])
+                .then((respuesta) =>
+                    window.location.href = "ver_todo_productos.html"
+                );
+        })
+        .catch((error) => alert('Ocurrió un error'));
     });
 
     return producto;
@@ -35,7 +46,7 @@ const seccionProductos = document.querySelector(".todos_los_productos--contenedo
 clientServices
 .listaProductos()
     .then((data) => {
-    data.forEach((producto) => {
+    data[0]['productos'].forEach((producto) => {
         const nuevoProducto = crearNuevoProducto(producto.id, producto.imagen, producto.nombre, producto.precio);
         seccionProductos.appendChild(nuevoProducto);
     });
